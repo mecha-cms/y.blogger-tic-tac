@@ -1,0 +1,7 @@
+@mixin user {
+  form {
+    &[name='user'] {
+      background: var(--fill);
+    }
+  }
+}

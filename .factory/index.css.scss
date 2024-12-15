@@ -201,18 +201,19 @@ th {
 }
 
 blockquote {
-  color: var(--color-1);
+  color: var(--color-2);
   font-size: 1.185rem;
   margin: {
-    left: 1.15rem;
-    right: 1.15rem;
+    left: 1rem;
+    right: 1rem;
   }
 }
 
 caption,
 figcaption {
-  color: var(--color-2);
-  margin: 1rem 0 0;
+  @extend %small;
+  color: var(--color-1);
+  margin: 0.5rem 0 0;
   text-align: center;
 }
 
@@ -230,7 +231,7 @@ details {
   > summary {
     @extend %label;
     display: block;
-    padding-left: 1.15rem;
+    padding-left: 1rem;
     position: relative;
     text-decoration: none !important;
     &::before {
@@ -252,7 +253,7 @@ details {
   }
   &[open] {
     > summary {
-      margin-bottom: 1.15rem;
+      margin-bottom: 1rem;
       &::before {
         border: {
           bottom: 0 solid transparent;
@@ -272,7 +273,7 @@ details {
     }
     ul {
       list-style: none;
-      margin-left: 1.15rem;
+      margin-left: 1rem;
     }
     + [role='tree'] {
       margin-top: 0;
@@ -298,8 +299,8 @@ var {
 
 dl {
   margin: {
-    left: 1.15rem;
-    right: 1.15rem;
+    left: 1rem;
+    right: 1rem;
   }
 }
 
@@ -307,32 +308,30 @@ ol,
 ul {
   margin-left: 2rem;
   & & {
-    margin-left: 1.15rem;
+    margin-left: 1.5rem;
   }
 }
 
-ol {
+ol,
+ul {
   ul {
     margin-left: 0;
   }
 }
 
 ul {
-  margin-left: 0;
-  li {
+  margin-left: 1rem;
+  > li {
     background: transparent var(--icon-bullet) no-repeat 0 8px;
     list-style: none;
     padding-left: 14px;
-  }
-  ul {
-    margin-left: 0;
   }
 }
 
 fieldset {
   border: 1px solid;
   border-color: var(--stroke);
-  padding: 1.15rem;
+  padding: 1rem;
 }
 
 figure {
@@ -417,7 +416,7 @@ ol {
 pre {
   code {
     background: var(--fill-code, var(--color));
-    color: var(--color-code, var(--fill));
+    color: inherit;
     display: block;
     overflow: auto;
     padding: 0.5rem 0.75rem;
@@ -592,14 +591,16 @@ textarea {
 @include x.alert;
 @include x.comment;
 @include x.markdown;
+@include x.pass;
 @include x.search;
 @include x.t-o-c;
+@include x.user;
 
 body {
   > div {
     background: transparent url('center.gif') repeat-y 50% 0;
     margin: 0 auto;
-    max-width: 847px;
+    width: 847px;
     > footer {
       background: {
         image: url('footer-bottom.gif'), url('footer-top.gif'), url('footer-center.gif');
@@ -611,6 +612,7 @@ body {
       flex-wrap: wrap;
       font-size: 85%;
       justify-content: space-between;
+      margin: 0;
       padding: 20px 320px 29px 95px;
       a {
         color: var(--color-footer-link) !important;
@@ -654,35 +656,48 @@ body {
         }
       }
     }
-    // > nav {
-    //   border: {
-    //     bottom: 1px dotted;
-    //     color: var(--stroke);
-    //   }
-    //   font-size: 100%;
-    //   line-height: 2.7rem;
-    //   margin: 0;
-    //   text-align: center;
-    //   > ul {
-    //     display: flex;
-    //     flex-wrap: wrap;
-    //     justify-content: center;
-    //     list-style: none;
-    //     margin: 0;
-    //     padding: 0;
-    //     > li {
-    //       > a {
-    //         display: block;
-    //         font-weight: bold;
-    //         padding: 0 1.15rem;
-    //         &:focus,
-    //         &:hover {
-    //           text-decoration: none;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+    > nav {
+      background: {
+        image: var(--nav);
+        position: 50% 100%, 50% 0;
+        repeat: no-repeat, repeat-y;
+      }
+      color: var(--color-nav);
+      font-family: var(--face-2);
+      line-height: 2.7rem;
+      margin: 0;
+      padding: 0 41px;
+      text-align: center;
+      text-shadow: var(--shadow-nav-text);
+      > ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: start;
+        list-style: none;
+        margin: 0;
+        padding: 0 1.5rem;
+        > li {
+          background: 0 0;
+          margin: 0;
+          padding: 0;
+          > a {
+            color: inherit;
+            display: block;
+            font-weight: bold;
+            &:focus,
+            &:hover {
+              color: inherit;
+              text-decoration: underline;
+              &:visited {
+                color: inherit;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
     > header,
     > nav {
       + div {
@@ -725,11 +740,14 @@ body {
                 }
               }
             }
-            li {
-              background: var(--icon-bullet-1) no-repeat 0 6px;
-              padding: 0 0 0 14px;
-              + li {
-                margin-top: 3px;
+            ul {
+              list-style: none;
+              margin-left: 0;
+              > li {
+                background: var(--icon-bullet-1) no-repeat 0 6px;
+                + li {
+                  margin-top: 3px;
+                }
               }
             }
             &::after {
@@ -742,17 +760,6 @@ body {
               line-height: 32px;
               margin-bottom: -3px;
               padding: 0 0 0 30px;
-            }
-            > ul {
-              list-style: none;
-              margin-left: 0;
-              li {
-                background: var(--icon-bullet-1) no-repeat 0 6px;
-                padding: 0 0 0 14px;
-                + li {
-                  margin-top: 3px;
-                }
-              }
             }
           }
         }
@@ -838,26 +845,6 @@ body {
     }
   }
 }
-
-// @media (max-width: 680px) {
-//   body {
-//     > div {
-//       width: auto;
-//       > footer {
-//         padding: 0;
-//       }
-//       > header,
-//       > nav {
-//         + div {
-//           flex-direction: column;
-//           > aside {
-//             width: auto;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
 
 @include skin.blue;
 @include skin.green;

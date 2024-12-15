@@ -3,23 +3,40 @@
   .comments-body,
   .comments-footer,
   .form-comment {
-    margin-top: 1.15rem;
+    margin-top: 1rem;
   }
   .comments {
+    &-header {
+      h3 {
+        background: transparent url('comments-title.gif') no-repeat 0 0;
+        height: 37px;
+        padding: 8px 0 0 32px;
+      }
+    }
     h3,
     h4 {
-      color: var(--color-title);
       font-size: 125%;
     }
   }
+  .comment-footer {
+    background: var(--icon-comment-footer) no-repeat 2px 50%;
+    padding-left: 26px;
+  }
   .comment-header {
     .comment-author {
+      background: transparent var(--icon-bullet) no-repeat 0 6px;
       color: inherit;
       font: inherit;
       font-weight: bold;
+      padding-left: 14px;
     }
     .comment-meta {
-      color: var(--color-2);
+      color: var(--color-1);
+    }
+  }
+  .comment-status\:1 {
+    .comment-author {
+      background-image: var(--icon-bullet-1);
     }
   }
   .form-comment {
@@ -29,10 +46,17 @@
       textarea {
         + br {
           + small {
-            color: var(--color-2);
+            color: var(--color-1);
           }
         }
       }
     }
+  }
+  #comments {
+    background: #eee url('comments-top.gif') no-repeat 50% 0;
+    color: #666;
+    font-size: 85%;
+    margin: 14px 3px 3px;
+    padding: 30px 14px 14px;
   }
 }

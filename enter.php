@@ -2,7 +2,7 @@
 <html class>
   <head>
     <meta charset="utf-8">
-    <meta content="width=device-width" name="viewport">
+    <meta content="width=1024" name="viewport">
     <?php if ($v = w($page->description ?? $site->description ?? "")): ?>
       <meta content="<?= $v; ?>" name="description">
     <?php endif; ?>
@@ -20,3 +20,4 @@
   <body>
     <div>
       <?= self::header(); ?>
+      <?= self::nav(); ?>

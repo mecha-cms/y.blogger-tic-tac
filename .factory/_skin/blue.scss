@@ -1,4 +1,44 @@
 @mixin blue {
   .skin\:blue {
+    --color-1: #999;
+    --color-2: #666;
+    --color-3: #ddd;
+    --color-4: #999;
+    --color-button: #fff;
+    --color-code: #f63;
+    --color-footer-link: #fff;
+    --color-header: #fff;
+    --color-input: #222;
+    --color-link-1: #5b739c;
+    --color-link-2: #669;
+    --color-link: #69c;
+    --color-nav: #fff;
+    --color-title-link-1: #933;
+    --color-title-link-2: #933;
+    --color-title-link: #933;
+    --color-title: #933;
+    --color: #333;
+    --face-1: 'Courier New', monospace;
+    --face-2: 'Lucida Grande', 'Trebuchet MS', sans-serif;
+    --face: Verdana, sans-serif;
+    --fill-button: #81b3e2;
+    --fill-code: #eee;
+    --fill-input: #fafafa;
+    --fill-mark: #ff9;
+    --fill: #e0e0e0;
+    --header: url('header-bottom/blue.gif'), url('header-top/blue.gif'), url('header-center/blue.gif');
+    --icon-author: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAYAAAAL4VbbAAAAd0lEQVQoU2NkgILGzY/+w9j1vnKMMDYyDRZEVgji3zqwi2FpbwqGBhorBlkdXTwH7mZsTgCpweoRbJ6DK0b3IEgCW4gwYlOIK0SGpGKSoxtZA650gRIpsCBEV3z37l14zMJjEFlxU5Yj1kiEK0ZOG+iKlZWVweoAlhJnPrTDhdsAAAAASUVORK5CYII=');
+    --icon-bullet-1: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAILGzY/+g2hsoN5XjpERnwKQplsHdjHQSRHIKhBgBBHRxXNwOnxpbwojADP0HasjE/P6AAAAAElFTkSuQmCC');
+    --icon-bullet: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAILGzY/+g2hsoN5XjpERnwKQplsHdjHQSRHIKhBgBBHRxXNwOnxpbwojADP0HasjE/P6AAAAAElFTkSuQmCC');
+    --icon-comment-footer: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAAYElEQVQoU2OcaWz8P/3sWUYGIgEjVTVgMwxsg3FaGoNJejqGs0ByIJciOxmsASSITRNMDlkT45mZM/+fnTWLKC+DbAI7A9kkQjrh7ibGJrgNuEzF6gd8TsAaSoQ0oKcCAA/zPAqxwgCvAAAAAElFTkSuQmCC');
+    --icon-time: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQYV2NkAIKZM2f+B9G4QHp6OiMjIUUwzRgKQbqx2UJDhTAr0T0E8wOK1eiKkT1KvhtxhSXWoEBXDHISANGVNlvW0DB4AAAAAElFTkSuQmCC');
+    --nav: url('nav-bottom/blue.gif'), url('nav-center/blue.gif');
+    --shadow-button-text: 1px 1px 1px #4f73b6;
+    --shadow-header-text: 2px 2px 2px #4f73b6;
+    --shadow-nav-text: 1px 1px 1px #4f73b6;
+    --stroke-button: #81b3e2 #5b739c #5b739c #81b3e2;
+    --stroke-image: #ddd #c0c0c0 #c0c0c0 #ddd;
+    --stroke-input: #aaa #aaa #ccc #ccc;
+    --stroke: #ddd;
   }
 }
