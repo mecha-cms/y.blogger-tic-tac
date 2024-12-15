@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @mixin green {
   .skin\:green {
     --color-1: #999;
@@ -13,8 +15,8 @@
     --color-link-2: #669;
     --color-link: #69c;
     --color-nav: #fff;
-    --color-title-link-1: #d34617;
-    --color-title-link-2: #d34617;
+    --color-title-link-1: #{color.scale(#f63, $lightness: -20%)};
+    --color-title-link-2: #{color.scale(#f63, $lightness: -20%)};
     --color-title-link: #f63;
     --color-title: #f63;
     --color: #333;
