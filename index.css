@@ -1,4 +1,4 @@
-/*! TicTac Blogger template by Dan Cederholm <https://simplebits.com> (2004/03/01) */
+/*! TicTac Blogger template by Dan Cederholm <https://simplebits.com> since 2004/03/01 */
 *,
 ::after,
 ::before {
@@ -82,7 +82,7 @@
   section,
   table,
   ul) {
-  margin-top: 1.15rem;
+  margin-top: 1rem;
 }
 
 li:where(:not(:first-child)) > :where(address,
@@ -114,7 +114,7 @@ li:where(:not(:first-child)) > :where(address,
   search,
   section,
   table):where(:first-child) {
-  margin-top: 1.15rem;
+  margin-top: 1rem;
 }
 
 :root {
@@ -126,12 +126,6 @@ li:where(:not(:first-child)) > :where(address,
 a,
 [role=link] {
   color: var(--color-link);
-}
-a img,
-[role=link] img {
-  border: 1px solid;
-  border-color: var(--stroke-image);
-  padding: 4px;
 }
 a:focus,
 [role=link]:focus,
@@ -194,6 +188,7 @@ textarea {
   background: var(--fill-input, var(--fill));
   border: 1px solid;
   border-color: var(--stroke-input, var(--stroke));
+  border-radius: 3px;
   color: var(--color-input);
   display: inline-block;
   height: 2rem;
@@ -235,6 +230,12 @@ u {
   text-decoration: underline;
 }
 
+a img,
+[role=link] img {
+  border: 1px solid;
+  border-color: var(--stroke-image);
+  padding: 4px;
+}
 a[rel=author],
 [rel=author][role=link] {
   background: transparent var(--icon-author) no-repeat 0 50%;
@@ -255,13 +256,14 @@ blockquote {
 
 caption,
 figcaption {
+  color: var(--color-2);
   margin: 1rem 0 0;
   text-align: center;
 }
 
 code {
   color: var(--color-code);
-  font-family: var(--face-2);
+  font-family: var(--face-1);
 }
 
 details > summary {
@@ -363,35 +365,36 @@ h4,
 h5,
 h6 {
   color: var(--color-2);
+  font-family: var(--face-2);
   line-height: 1.15;
 }
 
 h1 {
-  font-size: 310%;
+  font-size: 260%;
 }
 
 h2 {
-  font-size: 250%;
-}
-
-h3 {
   font-size: 200%;
 }
 
+h3 {
+  font-size: 150%;
+}
+
 h4 {
-  font-size: 160%;
-}
-
-h5 {
-  font-size: 130%;
-}
-
-h6 {
   font-size: 110%;
 }
 
+h5 {
+  font-size: 80%;
+}
+
+h6 {
+  font-size: 60%;
+}
+
 hr {
-  border-top: 1px dotted;
+  border-top: 1px solid;
   border-color: var(--stroke);
 }
 
@@ -470,24 +473,17 @@ input[type=button],
 input[type=reset],
 input[type=submit] {
   background: var(--fill-button, var(--fill));
-  border-width: 0;
+  border-color: var(--stroke-button, var(--stroke));
   color: var(--color-button) !important;
   cursor: pointer;
-  line-height: 2rem;
+  font-family: var(--face-2);
+  font-weight: bold;
   padding-left: 0.65rem;
   padding-right: 0.65rem;
   text-align: center;
   text-decoration: none !important;
+  text-shadow: var(--shadow-button-text);
   width: auto;
-}
-button:not(:focus-visible),
-[role=button]:not(:focus-visible),
-input[type=button]:not(:focus-visible),
-input[type=reset]:not(:focus-visible),
-input[type=submit]:not(:focus-visible) {
-  outline: 1px solid;
-  outline-color: var(--stroke-button);
-  outline-offset: -3px;
 }
 
 input[type=color],
@@ -546,9 +542,8 @@ textarea {
 }
 
 [role=alert] {
-  background: var(--fill-alert);
-  border: 1px solid;
-  border-color: var(--stroke-alert);
+  background: rgba(0, 0, 0, 0.125);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   padding: 0.25rem 0.75rem;
   text-align: center;
 }
@@ -575,10 +570,17 @@ textarea {
   font: inherit;
   font-weight: bold;
 }
+.comment-header .comment-meta {
+  color: var(--color-2);
+}
 
 .form-comment p input + br + small,
 .form-comment p select + br + small,
 .form-comment p textarea + br + small {
+  color: var(--color-2);
+}
+
+[role=doc-endnotes] {
   color: var(--color-2);
 }
 
@@ -614,43 +616,47 @@ search p {
 }
 
 body > div {
-  max-width: 847px;
-  margin: 0 auto;
   background: transparent url("center.gif") repeat-y 50% 0;
+  margin: 0 auto;
+  max-width: 847px;
 }
 body > div > footer {
+  background-image: url("footer-bottom.gif"), url("footer-top.gif"), url("footer-center.gif");
+  background-position: 50% 100%, 50% 0, 50% 0;
+  background-repeat: no-repeat, no-repeat, repeat-y;
+  color: var(--color-3);
   display: flex;
   flex-wrap: wrap;
   font-size: 85%;
-  padding: 20px 320px 29px 95px;
   justify-content: space-between;
-  background: 0 0;
-  background-image: url("bottom-1.gif"), url("bottom-2.gif");
-  background-position: 50% 100%, 50% 0;
-  color: var(--color-3);
+  padding: 20px 320px 29px 95px;
+}
+body > div > footer a,
+body > div > footer [role=link] {
+  color: var(--color-footer-link) !important;
 }
 body > div > footer p {
   margin: 0;
 }
 body > div > footer p:only-child {
   flex: 1;
-  text-align: center;
+  text-align: right;
 }
 body > div > header {
-  font-family: lucida grande, trebuchet ms;
-  background: 0 0;
-  background-image: var(--banner);
-  background-position: 50% 100%, 50% 0;
+  background-image: var(--header);
+  background-position: 50% 100%, 50% 0, 50% 0;
+  background-repeat: no-repeat, no-repeat, repeat-y;
+  color: var(--color-header);
+  font-family: var(--face-2);
   padding: 0 41px;
-  color: #fff;
 }
 body > div > header h1 {
   color: inherit;
+  font-size: 200%;
   line-height: 1.2em;
   margin: 0;
   padding: 45px 19px 50px 119px;
-  text-shadow: 2px 2px 2px #81A75B;
-  font-size: 200%;
+  text-shadow: var(--shadow-header-text);
 }
 body > div > header h1 a,
 body > div > header h1 [role=link] {
@@ -677,13 +683,13 @@ body > div > nav + div {
 }
 body > div > header + div > aside,
 body > div > nav + div > aside {
-  background: transparent url("aside.gif") no-repeat 50% 0;
+  background: transparent url("aside-top.gif") no-repeat 50% 0;
+  color: var(--color-1);
+  font-size: 85%;
   margin: 0;
   padding: 20px;
   width: 259px;
-  font-size: 85%;
   line-height: 1.4em;
-  color: var(--color-1);
 }
 body > div > header + div > aside > div,
 body > div > nav + div > aside > div {
@@ -691,6 +697,14 @@ body > div > nav + div > aside > div {
   border-color: var(--stroke);
   margin: 0 -20px;
   padding: 15px 20px;
+}
+body > div > header + div > aside > div [role=tree] ul,
+body > div > nav + div > aside > div [role=tree] ul {
+  margin-top: 3px;
+}
+body > div > header + div > aside > div [role=tree] + [role=tree],
+body > div > nav + div > aside > div [role=tree] + [role=tree] {
+  margin-top: 3px;
 }
 body > div > header + div > aside > div li [role=status]::after,
 body > div > header + div > aside > div summary [role=status]::after,
@@ -704,6 +718,15 @@ body > div > nav + div > aside > div li [role=status]::before,
 body > div > nav + div > aside > div summary [role=status]::before {
   content: "(";
 }
+body > div > header + div > aside > div li,
+body > div > nav + div > aside > div li {
+  background: var(--icon-bullet-1) no-repeat 0 6px;
+  padding: 0 0 0 14px;
+}
+body > div > header + div > aside > div li + li,
+body > div > nav + div > aside > div li + li {
+  margin-top: 3px;
+}
 body > div > header + div > aside > div::after,
 body > div > nav + div > aside > div::after {
   clear: both;
@@ -712,13 +735,12 @@ body > div > nav + div > aside > div::after {
 }
 body > div > header + div > aside > div > h3,
 body > div > nav + div > aside > div > h3 {
-  padding: 0 0 0 30px;
-  color: #666;
-  background: transparent url("aside-icon.gif") no-repeat 0 50%;
+  background: transparent url("aside-title.gif") no-repeat 0 50%;
+  color: var(--color-2);
   font-size: 130%;
-  font-family: "Lucida Grande", "Trebuchet MS";
   line-height: 32px;
-  margin: 0 0 10px;
+  margin-bottom: -3px;
+  padding: 0 0 0 30px;
 }
 body > div > header + div > aside > div > ul,
 body > div > nav + div > aside > div > ul {
@@ -728,7 +750,11 @@ body > div > nav + div > aside > div > ul {
 body > div > header + div > aside > div > ul li,
 body > div > nav + div > aside > div > ul li {
   background: var(--icon-bullet-1) no-repeat 0 6px;
-  padding: 0 0 3px 14px;
+  padding: 0 0 0 14px;
+}
+body > div > header + div > aside > div > ul li + li,
+body > div > nav + div > aside > div > ul li + li {
+  margin-top: 3px;
 }
 body > div > header + div > main,
 body > div > nav + div > main {
@@ -758,14 +784,22 @@ body > div > nav + div > main > article > div::after {
 }
 body > div > header + div > main > article > footer,
 body > div > nav + div > main > article > footer {
+  background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAbElEQVQIW22PSwrAIAxEJ7fxZp7JG7l1J4g3qLt25Sd1BEFoA8NA5gUmgjk5Z6WfM8ZA7x3GGJETUFUwpFprC/LeY0EMuThDQlQIARJj1L+w1rqglBJkkrqvtm/guW9cpUBY1jn3Kb6fsNbKC/4Zcy9Ee7QtAAAAAElFTkSuQmCC") no-repeat 0 6px;
+  color: var(--color-1);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   font-size: 88%;
-  color: var(--color-1);
+  justify-content: space-between;
   margin: 0 0 14px 14px;
   padding: 0 0 0 14px;
-  background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAbElEQVQIW22PSwrAIAxEJ7fxZp7JG7l1J4g3qLt25Sd1BEFoA8NA5gUmgjk5Z6WfM8ZA7x3GGJETUFUwpFprC/LeY0EMuThDQlQIARJj1L+w1rqglBJkkrqvtm/guW9cpUBY1jn3Kb6fsNbKC/4Zcy9Ee7QtAAAAAElFTkSuQmCC") no-repeat 0 6px;
+}
+body > div > header + div > main > article > footer a[rel=author],
+body > div > header + div > main > article > footer [rel=author][role=link],
+body > div > nav + div > main > article > footer a[rel=author],
+body > div > nav + div > main > article > footer [rel=author][role=link] {
+  background: 0 0;
+  display: inline;
+  padding: 0;
 }
 body > div > header + div > main > article > header,
 body > div > nav + div > main > article > header {
@@ -776,10 +810,9 @@ body > div > header + div > main > article > header h3,
 body > div > nav + div > main > article > header h2,
 body > div > nav + div > main > article > header h3 {
   color: var(--color-title);
-  font-family: "Lucida Grande", "Trebuchet MS";
   font-size: 130%;
   letter-spacing: -1px;
-  margin: 14px 0 0 14px;
+  margin: 0 0 0 14px;
 }
 body > div > header + div > main > article > header h2 a,
 body > div > header + div > main > article > header h2 [role=link],
@@ -808,7 +841,6 @@ body > div > nav + div > main > article > header h3 [role=link]:focus,
 body > div > nav + div > main > article > header h3 a:hover,
 body > div > nav + div > main > article > header h3 [role=link]:hover {
   color: var(--color-title-link-1);
-  text-decoration: none;
 }
 body > div > header + div > main > article > header h2 a:focus:visited,
 body > div > header + div > main > article > header h2 [role=link]:focus:visited,
@@ -830,15 +862,21 @@ body > div > nav + div > main > article > header h3 [role=link]:hover:visited {
 }
 body > div > header + div > main > article > header p,
 body > div > nav + div > main > article > header p {
-  color: #f93;
+  background: transparent var(--icon-time) no-repeat 0 50%;
+  color: var(--color-4);
   font-size: 90%;
   font-weight: bold;
   padding-left: 14px;
-  background: transparent var(--icon-time) no-repeat 0 50%;
 }
 body > div > header + div > main > article > header p time,
 body > div > nav + div > main > article > header p time {
   display: block;
+}
+body > div > header + div > main > article > header p + h2,
+body > div > header + div > main > article > header p + h3,
+body > div > nav + div > main > article > header p + h2,
+body > div > nav + div > main > article > header p + h3 {
+  margin-top: 14px;
 }
 body > div > header + div > main > article + nav,
 body > div > nav + div > main > article + nav {
@@ -846,51 +884,41 @@ body > div > nav + div > main > article + nav {
   justify-content: space-between;
 }
 
-@media (max-width: 680px) {
-  body > div {
-    width: auto;
-  }
-  body > div > footer {
-    padding: 0;
-  }
-  body > div > header + div,
-  body > div > nav + div {
-    flex-direction: column;
-  }
-  body > div > header + div > aside,
-  body > div > nav + div > aside {
-    width: auto;
-  }
-}
 .skin\:green {
-  --banner: url("top-green-1.gif"), url("top-green-2.gif");
   --color-1: #999;
   --color-2: #666;
   --color-3: #ddd;
-  --color-button: #ff0;
+  --color-4: #f93;
+  --color-button: #fff;
   --color-code: #f63;
-  --color-input: #ff0;
+  --color-footer-link: #fff;
+  --color-header: #fff;
+  --color-input: #222;
   --color-link-1: #693;
   --color-link-2: #669;
   --color-link: #69c;
-  --color-title-link-1: #f00;
-  --color-title-link-2: #f00;
-  --color-title-link: #f00;
+  --color-title-link-1: #d34617;
+  --color-title-link-2: #d34617;
+  --color-title-link: #f63;
   --color-title: #f63;
   --color: #333;
-  --face-1: monospace;
-  --face: Verdana;
-  --fill-button: #f00;
-  --fill-code: #f00;
-  --fill-input: #f00;
-  --fill-mark: #f00;
+  --face-1: "Courier New", monospace;
+  --face-2: "Lucida Grande", "Trebuchet MS", sans-serif;
+  --face: Verdana, sans-serif;
+  --fill-button: #acd194;
+  --fill-code: #eec;
+  --fill-input: #fafafa;
+  --fill-mark: #ff9;
   --fill: #e0e0e0;
+  --header: url("header-bottom--green.gif"), url("header-top--green.gif"), url("header-center--green.gif");
   --icon-author: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAYAAAAL4VbbAAAAeElEQVQoU2NkgII1F6f8h7FD9HMYYWxkGiyIrBDEv/7qDEOt6wIMDTRWDLK6eXcC3M3YnABSg9Uj2DwHV4zuQZAEthBhxKYQV4gMScUkRzeyBlzpAiVSYEGIrvju3bvwmIXHILLiKKVarJEIV4ycNtAVKysrg9UBAKACZz5dQJx/AAAAAElFTkSuQmCC");
   --icon-bullet-1: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAII1F6f8B9HYQIh+DiMjPgUgTddfnWGgkyKQVSDACCKadyfgdHit6wJGAIakHnsRQ42ZAAAAAElFTkSuQmCC");
   --icon-bullet: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAIL/Z9L+g2hsgNFkFiMjPgUgTXdu32KgkyKQVSDACCJuL3fA6XDVyAOMANW8HwtoXHIaAAAAAElFTkSuQmCC");
   --icon-time: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAO0lEQVQYV2NkAIL/M43/g2hcgDH9LCMjIUUwzRgKQbqx2UJDhTAr0T0E8wOK1eiKkT1KvhtxhiWxAQ4A1/U2W2DZrMwAAAAASUVORK5CYII=");
-  --stroke-button: #900;
+  --shadow-button-text: 1px 1px 1px #81a75b;
+  --shadow-header-text: 2px 2px 2px #81a75b;
+  --stroke-button: #acd194 #83bb60 #83bb60 #acd194;
   --stroke-image: #ddd #c0c0c0 #c0c0c0 #ddd;
-  --stroke-input: #900;
+  --stroke-input: #aaa #aaa #ccc #ccc;
   --stroke: #ddd;
 }

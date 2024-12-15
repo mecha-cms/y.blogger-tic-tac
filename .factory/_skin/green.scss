@@ -1,34 +1,40 @@
 @mixin green {
   .skin\:green {
-    --banner: url('top-green-1.gif'), url('top-green-2.gif');
     --color-1: #999;
     --color-2: #666;
     --color-3: #ddd;
-    --color-button: #ff0;
+    --color-4: #f93;
+    --color-button: #fff;
     --color-code: #f63;
-    --color-input: #ff0;
+    --color-footer-link: #fff;
+    --color-header: #fff;
+    --color-input: #222;
     --color-link-1: #693;
     --color-link-2: #669;
     --color-link: #69c;
-    --color-title-link-1: #f00;
-    --color-title-link-2: #f00;
-    --color-title-link: #f00;
+    --color-title-link-1: #d34617;
+    --color-title-link-2: #d34617;
+    --color-title-link: #f63;
     --color-title: #f63;
     --color: #333;
-    --face-1: monospace;
-    --face: Verdana;
-    --fill-button: #f00;
-    --fill-code: #f00;
-    --fill-input: #f00;
-    --fill-mark: #f00;
+    --face-1: 'Courier New', monospace;
+    --face-2: 'Lucida Grande', 'Trebuchet MS', sans-serif;
+    --face: Verdana, sans-serif;
+    --fill-button: #acd194;
+    --fill-code: #eec;
+    --fill-input: #fafafa;
+    --fill-mark: #ff9;
     --fill: #e0e0e0;
+    --header: url('header-bottom--green.gif'), url('header-top--green.gif'), url('header-center--green.gif');
     --icon-author: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAYAAAAL4VbbAAAAeElEQVQoU2NkgII1F6f8h7FD9HMYYWxkGiyIrBDEv/7qDEOt6wIMDTRWDLK6eXcC3M3YnABSg9Uj2DwHV4zuQZAEthBhxKYQV4gMScUkRzeyBlzpAiVSYEGIrvju3bvwmIXHILLiKKVarJEIV4ycNtAVKysrg9UBAKACZz5dQJx/AAAAAElFTkSuQmCC');
     --icon-bullet-1: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAII1F6f8B9HYQIh+DiMjPgUgTddfnWGgkyKQVSDACCKadyfgdHit6wJGAIakHnsRQ42ZAAAAAElFTkSuQmCC');
     --icon-bullet: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAIL/Z9L+g2hsgNFkFiMjPgUgTXdu32KgkyKQVSDACCJuL3fA6XDVyAOMANW8HwtoXHIaAAAAAElFTkSuQmCC');
     --icon-time: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAO0lEQVQYV2NkAIL/M43/g2hcgDH9LCMjIUUwzRgKQbqx2UJDhTAr0T0E8wOK1eiKkT1KvhtxhiWxAQ4A1/U2W2DZrMwAAAAASUVORK5CYII=');
-    --stroke-button: #900;
+    --shadow-button-text: 1px 1px 1px #81a75b;
+    --shadow-header-text: 2px 2px 2px #81a75b;
+    --stroke-button: #acd194 #83bb60 #83bb60 #acd194;
     --stroke-image: #ddd #c0c0c0 #c0c0c0 #ddd;
-    --stroke-input: #900;
+    --stroke-input: #aaa #aaa #ccc #ccc;
     --stroke: #ddd;
   }
 }

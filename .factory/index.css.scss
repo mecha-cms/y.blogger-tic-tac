@@ -7,7 +7,7 @@
   display: table;
 }
 
-/*! TicTac Blogger template by Dan Cederholm <https://simplebits.com> (2004/03/01) */
+/*! TicTac Blogger template by Dan Cederholm <https://simplebits.com> since 2004/03/01 */
 
 *,
 ::after,
@@ -65,7 +65,7 @@
   ul
 ) {
   & + & {
-    margin-top: 1.15rem;
+    margin-top: 1rem;
   }
 }
 
@@ -102,7 +102,7 @@ li {
       section,
       table
     ):where(:first-child) {
-      margin-top: 1.15rem;
+      margin-top: 1rem;
     }
   }
 }
@@ -115,11 +115,6 @@ li {
 
 %a {
   color: var(--color-link);
-  img {
-    border: 1px solid;
-    border-color: var(--stroke-image);
-    padding: 4px;
-  }
   &:focus,
   &:hover {
     color: var(--color-link-1);
@@ -152,6 +147,7 @@ li {
   background: var(--fill-input, var(--fill));
   border: 1px solid;
   border-color: var(--stroke-input, var(--stroke));
+  border-radius: 3px;
   color: var(--color-input);
   display: inline-block;
   height: 2rem;
@@ -180,6 +176,11 @@ li {
 
 a {
   @extend %a;
+  img {
+    border: 1px solid;
+    border-color: var(--stroke-image);
+    padding: 4px;
+  }
   &[rel='author'] {
     background: transparent var(--icon-author) no-repeat 0 50%;
     display: inline-block;
@@ -210,13 +211,14 @@ blockquote {
 
 caption,
 figcaption {
+  color: var(--color-2);
   margin: 1rem 0 0;
   text-align: center;
 }
 
 code {
   color: var(--color-code);
-  font-family: var(--face-2);
+  font-family: var(--face-1);
 }
 
 del,
@@ -360,36 +362,37 @@ h5,
 h6 {
   @extend %b;
   color: var(--color-2);
+  font-family: var(--face-2);
   line-height: 1.15;
 }
 
 h1 {
-  font-size: 310%;
+  font-size: 260%;
 }
 
 h2 {
-  font-size: 250%;
-}
-
-h3 {
   font-size: 200%;
 }
 
+h3 {
+  font-size: 150%;
+}
+
 h4 {
-  font-size: 160%;
+  font-size: 110%;
 }
 
 h5 {
-  font-size: 130%;
+  font-size: 80%;
 }
 
 h6 {
-  font-size: 110%;
+  font-size: 60%;
 }
 
 hr {
   border: {
-    top: 1px dotted;
+    top: 1px solid;
     color: var(--stroke);
   }
 }
@@ -479,22 +482,21 @@ textarea {
 
 button {
   background: var(--fill-button, var(--fill));
-  border-width: 0;
+  border-color: var(--stroke-button, var(--stroke));
   color: var(--color-button) !important;
   cursor: pointer;
-  line-height: 2rem;
+  font: {
+    family: var(--face-2);
+    weight: bold;
+  }
   padding: {
     left: 0.65rem;
     right: 0.65rem;
   }
   text-align: center;
   text-decoration: none !important;
+  text-shadow: var(--shadow-button-text);
   width: auto;
-  &:not(:focus-visible) {
-    outline: 1px solid;
-    outline-color: var(--stroke-button);
-    outline-offset: -3px;
-  }
 }
 
 input {
@@ -595,55 +597,50 @@ textarea {
 
 body {
   > div {
-
-    max-width: 847px;
-    margin: 0 auto;
     background: transparent url('center.gif') repeat-y 50% 0;
-
+    margin: 0 auto;
+    max-width: 847px;
     > footer {
-
+      background: {
+        image: url('footer-bottom.gif'), url('footer-top.gif'), url('footer-center.gif');
+        position: 50% 100%, 50% 0, 50% 0;
+        repeat: no-repeat, no-repeat, repeat-y;
+      }
+      color: var(--color-3);
       display: flex;
       flex-wrap: wrap;
       font-size: 85%;
-      padding: 20px 320px 29px 95px;
       justify-content: space-between;
-      background: 0 0;
-      background-image: url('bottom-1.gif'),url('bottom-2.gif');
-      background-position: 50% 100%,50% 0;
-      color: var(--color-3);
-
+      padding: 20px 320px 29px 95px;
       a {
-        // TODO
+        color: var(--color-footer-link) !important;
       }
-
       p {
         margin: 0;
         &:only-child {
           flex: 1;
-          text-align: center;
+          text-align: right;
         }
       }
     }
     > header {
-
-      font-family: lucida grande,trebuchet ms;
-      background: 0 0;
-      background-image: var(--banner);
-      background-position: 50% 100%,50% 0;
+      background: {
+        image: var(--header);
+        position: 50% 100%, 50% 0, 50% 0;
+        repeat: no-repeat, no-repeat, repeat-y;
+      }
+      color: var(--color-header);
+      font-family: var(--face-2);
       padding: 0 41px;
-      color: #fff;
-
       h1 {
-
         color: inherit;
-        line-height: 1.2em;
-        margin: 0;
-        padding: 45px 19px 50px 119px;
-        text-shadow: 2px 2px 2px #81A75B;
         font: {
           size: 200%;
         }
-
+        line-height: 1.2em;
+        margin: 0;
+        padding: 45px 19px 50px 119px;
+        text-shadow: var(--shadow-header-text);
         a {
           color: inherit;
           &:focus,
@@ -693,15 +690,15 @@ body {
         margin: 0;
         padding: 0 41px;
         > aside {
-          background: transparent url('aside.gif') no-repeat 50% 0;
-          margin: 0;
-          padding: 20px;
-          width: 259px;
+          background: transparent url('aside-top.gif') no-repeat 50% 0;
+          color: var(--color-1);
           font: {
             size: 85%;
           }
+          margin: 0;
+          padding: 20px;
+          width: 259px;
           line-height: 1.4em;
-          color: var(--color-1);
           > div {
             border: {
               bottom: 1px solid;
@@ -709,6 +706,14 @@ body {
             }
             margin: 0 -20px;
             padding: 15px 20px;
+            [role='tree'] {
+              ul {
+                margin-top: 3px;
+              }
+              + [role='tree'] {
+                margin-top: 3px;
+              }
+            }
             li,
             summary {
               [role='status'] {
@@ -720,28 +725,33 @@ body {
                 }
               }
             }
+            li {
+              background: var(--icon-bullet-1) no-repeat 0 6px;
+              padding: 0 0 0 14px;
+              + li {
+                margin-top: 3px;
+              }
+            }
             &::after {
               @include clear();
             }
             > h3 {
-
-              padding: 0 0 0 30px;
-              color: #666;
-              background: transparent url('aside-icon.gif') no-repeat 0 50%;
+              background: transparent url('aside-title.gif') no-repeat 0 50%;
+              color: var(--color-2);
               font-size: 130%;
-              font-family: "Lucida Grande", "Trebuchet MS";
               line-height: 32px;
-              margin: 0 0 10px;
-
+              margin-bottom: -3px;
+              padding: 0 0 0 30px;
             }
             > ul {
               list-style: none;
               margin-left: 0;
               li {
-
                 background: var(--icon-bullet-1) no-repeat 0 6px;
-                padding: 0 0 3px 14px;
-
+                padding: 0 0 0 14px;
+                + li {
+                  margin-top: 3px;
+                }
               }
             }
           }
@@ -760,42 +770,41 @@ body {
               margin-top: 14px;
             }
             > div {
-
               margin: 0 0 14px 14px;
-
               &::after {
                 @include clear();
               }
             }
             > footer {
-
+              background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAbElEQVQIW22PSwrAIAxEJ7fxZp7JG7l1J4g3qLt25Sd1BEFoA8NA5gUmgjk5Z6WfM8ZA7x3GGJETUFUwpFprC/LeY0EMuThDQlQIARJj1L+w1rqglBJkkrqvtm/guW9cpUBY1jn3Kb6fsNbKC/4Zcy9Ee7QtAAAAAElFTkSuQmCC') no-repeat 0 6px;
+              color: var(--color-1);
               display: flex;
               flex-wrap: wrap;
-              justify-content: space-between;
               font-size: 88%;
-              color: var(--color-1);
+              justify-content: space-between;
               margin: 0 0 14px 14px;
               padding: 0 0 0 14px;
-              background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAbElEQVQIW22PSwrAIAxEJ7fxZp7JG7l1J4g3qLt25Sd1BEFoA8NA5gUmgjk5Z6WfM8ZA7x3GGJETUFUwpFprC/LeY0EMuThDQlQIARJj1L+w1rqglBJkkrqvtm/guW9cpUBY1jn3Kb6fsNbKC/4Zcy9Ee7QtAAAAAElFTkSuQmCC') no-repeat 0 6px;
-
+              a {
+                &[rel='author'] {
+                  background: 0 0;
+                  display: inline;
+                  padding: 0;
+                }
+              }
             }
             > header {
               margin: 0 0 14px;
               h2,
               h3 {
-
                 color: var(--color-title);
-                font-family: "Lucida Grande", "Trebuchet MS";
                 font-size: 130%;
                 letter-spacing: -1px;
-                margin: 14px 0 0 14px;
-
+                margin: 0 0 0 14px;
                 a {
                   color: var(--color-title-link);
                   &:focus,
                   &:hover {
                     color: var(--color-title-link-1);
-                    text-decoration: none;
                     &:visited {
                       color: var(--color-title-link-2, var(--color-title-link-1));
                     }
@@ -803,15 +812,19 @@ body {
                 }
               }
               p {
-
-                color: #f93;
-                font-size: 90%;
-                font-weight: bold;
-                padding-left: 14px;
                 background: transparent var(--icon-time) no-repeat 0 50%;
-
+                color: var(--color-4);
+                font: {
+                  size: 90%;
+                  weight: bold;
+                }
+                padding-left: 14px;
                 time {
                   display: block;
+                }
+                + h2,
+                + h3 {
+                  margin-top: 14px;
                 }
               }
             }
@@ -826,25 +839,25 @@ body {
   }
 }
 
-@media (max-width: 680px) {
-  body {
-    > div {
-      width: auto;
-      > footer {
-        padding: 0;
-      }
-      > header,
-      > nav {
-        + div {
-          flex-direction: column;
-          > aside {
-            width: auto;
-          }
-        }
-      }
-    }
-  }
-}
+// @media (max-width: 680px) {
+//   body {
+//     > div {
+//       width: auto;
+//       > footer {
+//         padding: 0;
+//       }
+//       > header,
+//       > nav {
+//         + div {
+//           flex-direction: column;
+//           > aside {
+//             width: auto;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 @include skin.blue;
 @include skin.green;

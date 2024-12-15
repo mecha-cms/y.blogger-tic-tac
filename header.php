@@ -4,11 +4,4 @@
       <?= $site->title; ?>
     </a>
   </h1>
-  <!--
-  <?php if ($description = $site->description): ?>
-    <p>
-      <?= $description; ?>
-    </p>
-  <?php endif; ?>
-  -->
 </header>

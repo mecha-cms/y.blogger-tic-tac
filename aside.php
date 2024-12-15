@@ -1,4 +1,10 @@
 <aside>
+  <?php if ($description = $site->description): ?>
+    <?= self::widget([
+        'content' => '<p>' . $description . '</p>',
+        'title' => i('About'),
+    ]); ?>
+  <?php endif; ?>
   <?= self::widget('form/search'); ?>
   <?php if ($site->is('home')): ?>
     <?= self::widget('page/random'); ?>

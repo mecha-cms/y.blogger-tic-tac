@@ -12,14 +12,14 @@
       font-size: 125%;
     }
   }
-  .comment-footer {
-  }
   .comment-header {
-    @extend .comment-footer;
     .comment-author {
       color: inherit;
       font: inherit;
       font-weight: bold;
+    }
+    .comment-meta {
+      color: var(--color-2);
     }
   }
   .form-comment {
