@@ -10,7 +10,7 @@ type: Markdown
 version: 1.0.0
 ...
 
-This is not a clone of the original Minima template. I didn’t make it from the original source code, but by refactoring
+This is not a clone of the original Tic Tac template. I didn’t make it from the original source code, but by refactoring
 it using more modern CSS and HTML syntax.
 
 ### Features
