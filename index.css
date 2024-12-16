@@ -242,7 +242,9 @@ a[rel=author],
 [rel=author][role=link] {
   background: transparent var(--icon-author) no-repeat 0 50%;
   display: inline-block;
+  line-height: 17px;
   padding: 0 0 0 14px;
+  vertical-align: middle;
 }
 
 abbr {
@@ -599,7 +601,7 @@ textarea {
   background: #eee url("comments-top.gif") no-repeat 50% 0;
   color: #666;
   font-size: 85%;
-  margin: 14px 3px 3px;
+  margin: 24px 3px 3px;
   padding: 30px 14px 14px;
 }
 
@@ -685,7 +687,6 @@ body > div > header {
 body > div > header h1 {
   color: inherit;
   font-size: 200%;
-  line-height: 1.2em;
   margin: 0;
   padding: 45px 19px 50px 119px;
   text-shadow: var(--shadow-header-text);
@@ -713,7 +714,7 @@ body > div > nav {
   background-repeat: no-repeat, repeat-y;
   color: var(--color-nav);
   font-family: var(--face-2);
-  line-height: 2.7rem;
+  line-height: 2.5rem;
   margin: 0;
   padding: 0 41px;
   text-align: center;
@@ -767,7 +768,6 @@ body > div > nav + div > aside {
   margin: 0;
   padding: 20px;
   width: 259px;
-  line-height: 1.4em;
 }
 body > div > header + div > aside > div,
 body > div > nav + div > aside > div {
@@ -867,7 +867,9 @@ body > div > nav + div > main > article > footer a[rel=author],
 body > div > nav + div > main > article > footer [rel=author][role=link] {
   background: 0 0;
   display: inline;
+  line-height: inherit;
   padding: 0;
+  vertical-align: baseline;
 }
 body > div > header + div > main > article > header,
 body > div > nav + div > main > article > header {
@@ -982,7 +984,7 @@ body > div > nav + div > main > article + nav {
   --header: url("header-bottom/blue.gif"), url("header-top/blue.gif"), url("header-center/blue.gif");
   --icon-author: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAYAAAAL4VbbAAAAd0lEQVQoU2NkgILGzY/+w9j1vnKMMDYyDRZEVgji3zqwi2FpbwqGBhorBlkdXTwH7mZsTgCpweoRbJ6DK0b3IEgCW4gwYlOIK0SGpGKSoxtZA650gRIpsCBEV3z37l14zMJjEFlxU5Yj1kiEK0ZOG+iKlZWVweoAlhJnPrTDhdsAAAAASUVORK5CYII=");
   --icon-bullet-1: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAILGzY/+g2hsoN5XjpERnwKQplsHdjHQSRHIKhBgBBHRxXNwOnxpbwojADP0HasjE/P6AAAAAElFTkSuQmCC");
-  --icon-bullet: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAILGzY/+g2hsoN5XjpERnwKQplsHdjHQSRHIKhBgBBHRxXNwOnxpbwojADP0HasjE/P6AAAAAElFTkSuQmCC");
+  --icon-bullet: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAM0lEQVQIW2NkAIL/Z9L+g2hsgNFkFiMjPgUgTXdu32KgkyKQVSDACCJuL3fA6XDVyAOMANW8HwtoXHIaAAAAAElFTkSuQmCC");
   --icon-comment-footer: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAAYElEQVQoU2OcaWz8P/3sWUYGIgEjVTVgMwxsg3FaGoNJejqGs0ByIJciOxmsASSITRNMDlkT45mZM/+fnTWLKC+DbAI7A9kkQjrh7ibGJrgNuEzF6gd8TsAaSoQ0oKcCAA/zPAqxwgCvAAAAAElFTkSuQmCC");
   --icon-time: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQYV2NkAIKZM2f+B9G4QHp6OiMjIUUwzRgKQbqx2UJDhTAr0T0E8wOK1eiKkT1KvhtxhSXWoEBXDHISANGVNlvW0DB4AAAAAElFTkSuQmCC");
   --nav: url("nav-bottom/blue.gif"), url("nav-center/blue.gif");

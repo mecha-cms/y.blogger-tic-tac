@@ -1,8 +1,10 @@
 <aside>
-  <?php if ($description = $site->description): ?>
+  <?php if ($description = $page->description ?? $site->description): ?>
+    <?php $author = $page->author; ?>
+    <?php $author = $author instanceof User ? '<a href="' . eat($author->link ?? $author->url) . '" rel="author">' . $author . '</a>' : ""; ?>
     <?= self::widget([
-        'content' => '<p>' . $description . '</p>',
-        'title' => i('About'),
+        'content' => '<p>' . $description . '</p>' . ($author ? '<p>' . $author . '</p>' : ""),
+        'title' => i('About')
     ]); ?>
   <?php endif; ?>
   <?= self::widget('form/search'); ?>
