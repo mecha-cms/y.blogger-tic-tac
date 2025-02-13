@@ -1,5 +1,5 @@
 ---
-title: Blogger: Tic Tac
+title: 'Blogger: Tic Tac'
 description: Tic Tac (classic Blogger template), ported to Mecha.
 image: /lot/y/blogger-tic-tac/index.png
 images:
@@ -7,7 +7,7 @@ images:
 - /lot/y/blogger-tic-tac/index/1.png
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.0
+version: 1.0.1
 ...
 
 This is not a clone of the original Tic Tac template. I didn’t make it from the original source code, but by refactoring
