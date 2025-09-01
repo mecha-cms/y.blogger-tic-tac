@@ -954,7 +954,7 @@ body > div > nav + div > main > article + nav {
   justify-content: space-between;
 }
 
-.skin\:blue {
+.skin-blue {
   --color-1: #999;
   --color-2: #666;
   --color-3: #ddd;
@@ -997,7 +997,7 @@ body > div > nav + div > main > article + nav {
   --stroke: #ddd;
 }
 
-.skin\:green {
+.skin-green {
   --color-1: #999;
   --color-2: #666;
   --color-3: #ddd;
